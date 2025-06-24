@@ -38,13 +38,13 @@ fi
 echo "--- OpenWrt Configuration Backup and Encryption Started ---"
 
 # 1. Create OpenWrt Configuration Backup
+echo "Creating OpenWrt configuration backup to ${BACKUP_DIR}/${BACKUP_FILENAME}..."
 if [ ! -d "$BACKUP_DIR" ]; then
   mkdir -p "$BACKUP_DIR"
   echo "Directory '$BACKUP_DIR' created."
 else
   echo "Directory '$BACKUP_DIR' already exists."
 fi
-echo "Creating OpenWrt configuration backup to ${BACKUP_DIR}/${BACKUP_FILENAME}..."
 sysupgrade -b "${BACKUP_DIR}/${BACKUP_FILENAME}"
 if [ $? -ne 0 ]; then
     echo "Error: OpenWrt backup creation failed!"
