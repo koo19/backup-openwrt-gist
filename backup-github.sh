@@ -17,8 +17,9 @@ GIST_PUBLIC="false"                # 'true' for public, 'false' for private (rec
 # GitHub Personal Access Token (PAT) and Encryption Password
 # It is STRONGLY RECOMMENDED not to hardcode these sensitive details in the script!
 # Instead, pass them as environment variables when executing the script.
-# Example: export GITHUB_PAT="ghp_YOUR_TOKEN"
-# Example: export ENCRYPTION_PASSWORD="YOUR_SUPER_STRONG_PASSWORD"
+# Example: export GITHUB_PAT="ghp_TOKEN"
+# Example: export ENCRYPTION_PASSWORD="A_SUPER_STRONG_PASSWORD"
+# Example: export BACKUP_GIST_ID="THE_GIST_ID"
 GITHUB_PAT="${GITHUB_PAT:-}"       # Reads from GITHUB_PAT environment variable
 ENCRYPTION_PASSWORD="${ENCRYPTION_PASSWORD:-}" # Reads from ENCRYPTION_PASSWORD environment variable
 GIST_ID="${BACKUP_GIST_ID:-}"
