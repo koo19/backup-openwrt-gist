@@ -25,11 +25,13 @@ ENCRYPTION_PASSWORD="${ENCRYPTION_PASSWORD:-}" # Reads from ENCRYPTION_PASSWORD 
 # --- Script Validation ---
 if [ -z "$GITHUB_PAT" ]; then
     echo "Error: GITHUB_PAT environment variable is not set. Please set your GitHub Personal Access Token."
+    echo "  Example: export ENCRYPTION_PASSWORD=\"YOUR_SUPER_STRONG_PASSWORD\""
     exit 1
 fi
 
 if [ -z "$ENCRYPTION_PASSWORD" ]; then
-    echo "Error: ENCRYPTION_PASSWORD environment variable is not set. Please set your encryption password."
+    echo "Error: ENCRYPTION_PASSWORD environment variable is not set. Please set your encryption password. "
+    echo "  Example: export ENCRYPTION_PASSWORD=\"YOUR_VERY_STRONG_ENCRYPTION_PASSWORD\""
     echo "Warning: Do NOT hardcode the password in the script; it's insecure!"
     exit 1
 fi
