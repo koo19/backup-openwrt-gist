@@ -21,6 +21,7 @@ GIST_PUBLIC="false"                # 'true' for public, 'false' for private (rec
 # Example: export ENCRYPTION_PASSWORD="YOUR_SUPER_STRONG_PASSWORD"
 GITHUB_PAT="${GITHUB_PAT:-}"       # Reads from GITHUB_PAT environment variable
 ENCRYPTION_PASSWORD="${ENCRYPTION_PASSWORD:-}" # Reads from ENCRYPTION_PASSWORD environment variable
+GIST_ID="${BACKUP_GIST_ID:-}"
 
 # --- Script Validation ---
 if [ -z "$GITHUB_PAT" ]; then
@@ -89,7 +90,7 @@ RESPONSE=$(curl -s -X POST \
   -H "Authorization: token ${GITHUB_PAT}" \
   -H "Content-Type: application/json" \
   --data-binary "@${JSON_TEMP_FILE}" \
-  https://api.github.com/gists)
+  https://api.github.com/gists/${GIST_ID})
 
 if [ $? -ne 0 ]; then
     echo "Error: Failed to call GitHub Gist API via curl!"
