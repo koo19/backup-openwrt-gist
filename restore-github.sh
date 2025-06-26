@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[ -f ~/.bashrc ] && . ~/.bashrc
+
 # --- Configuration ---
 RESTORE_DIR="/tmp/restore_backup" # Temporary directory for restoration files on OpenWrt
 
