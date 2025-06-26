@@ -12,6 +12,7 @@ RESTORE_DIR="/tmp/restore_backup" # Temporary directory for restoration files on
 # export ENCRYPTION_PASSWORD="YOUR_VERY_STRONG_ENCRYPTION_PASSWORD"
 GITHUB_PAT="${GITHUB_PAT:-}"
 ENCRYPTION_PASSWORD="${ENCRYPTION_PASSWORD:-}"
+GIST_ID="${BACKUP_GIST_ID:-}"
 
 # --- Script Validation ---
 if [ -z "$GITHUB_PAT" ]; then
